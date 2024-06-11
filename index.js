@@ -36,6 +36,8 @@ app.use(express.urlencoded({ extended: true }));
 // Importar y usar rutas
 const rutas_usuarios = require('./rutas/usuarios');
 app.use("/api/user", rutas_usuarios);
+const comprobante = require('./rutas/Comprobantes');
+app.use('/api/comprobantes', comprobante);
 
 // Crear servidor y escuchar peticiones
 app.listen(puerto, () => {
