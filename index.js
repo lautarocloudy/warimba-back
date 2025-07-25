@@ -14,10 +14,12 @@ const app = express();
 const puerto = process.env.PORT || 3000;
 
 const corsOptions = {
-  allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'X-Access-Token', 'Authorization'],
-	credentials: true,
-	origin: '*',
-	preflightContinue: false,
+  origin: 'https://warimba.netlify.app',
+  credentials: true,
+  allowedHeaders: [
+    'Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'X-Access-Token', 'Authorization'
+  ],
+  preflightContinue: false,
 };
 
 // Configurar CORS
