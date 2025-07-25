@@ -14,7 +14,7 @@ const app = express();
 const puerto = process.env.PORT || 3000;
 
 const corsOptions = {
-	allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'X-Access-Token', 'Authorization'],
+  allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'X-Access-Token', 'Authorization'],
 	credentials: true,
 	origin: '*',
 	preflightContinue: false,
@@ -22,7 +22,7 @@ const corsOptions = {
 
 // Configurar CORS
 app.use(cors(corsOptions));
-app.options("*", cors(corsOptions)); // Manejar solicitudes preflight globalmente
+app.options("/api/user/login", cors(corsOptions)); // Manejar solicitudes preflight globalmente
 
 app.use(fileUpload({
   useTempFiles: true,
